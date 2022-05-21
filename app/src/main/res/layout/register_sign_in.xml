@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="80dp">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/sign_logo" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="12dp"
+        android:hint="Name"
+        android:maxLength="12"
+        android:maxLines="1"
+        android:id="@+id/name"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="12dp"
+        android:hint="ID"
+        android:maxLength="12"
+        android:maxLines="1"
+        android:id="@+id/id"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="12dp"
+        android:hint="Password"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:password="true"
+        tools:ignore="Deprecated"
+        android:id="@+id/pw"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="12dp"
+        android:hint="Password Check"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:password="true"
+        tools:ignore="Deprecated"
+        android:id="@+id/pwck"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="Deprecated"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_marginRight="20dp"
+            android:text="학생"
+            android:id="@+id/studentChecked"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/generalChecked"
+            android:text="일반" />
+    </RadioGroup>
+
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/buttondesign"
+        android:text="회원가입"
+        android:textColor="#9f000000"
+        android:textStyle="bold"
+        android:id="@+id/signup" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/no_layout_button"
+        android:text="이미 아이디가 있다면?"
+        android:textSize="11dp"
+        android:textColor="#9f000000"
+        android:textStyle="bold"
+        android:onClick="goLogin" />
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tap_home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        app:showAsAction="ifRoom"
+        android:title="home"/>
+
+    <item
+        android:id="@+id/tab_map"
+        android:enabled="true"
+        android:icon="@drawable/map"
+        app:showAsAction="ifRoom"
+        android:title="map"/>
+
+    <item
+        android:id="@+id/tab_like"
+        android:enabled="true"
+        android:icon="@drawable/like"
+        app:showAsAction="ifRoom"
+        android:title="like"/>
+
+    <item
+        android:id="@+id/tab_more"
+        android:enabled="true"
+        android:icon="@drawable/more"
+        app:showAsAction="ifRoom"
+        android:title="more"/>
+</menu>

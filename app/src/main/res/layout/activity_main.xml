@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    tools:context=".MainActivity">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp">
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/buttondesign"
+                    android:onClick="onLoginClicked"
+                    android:text="로그인"
+                    android:textColor="#70000000"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/buttondesign"
+                    android:onClick="onSignupClicked"
+                    android:text="회원가입"
+                    android:textColor="#70000000"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:src="@drawable/main_logo"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="10dp"
+            android:text="회원가입을하면 더욱 다양한 정보를 얻을 수 있어요" />
+
+        <FrameLayout
+            
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"/>
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"/>
+        </FrameLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_gravity="center">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/dinner"
+                    android:onClick="onDinnerClicked" />
+
+                <TextView
+                    android:text="식당"
+                    android:textSize="11dp"
+                    android:layout_gravity="center"/>
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/coffee"
+                    android:onClick="onCafeClicked" />
+
+                <TextView
+                    android:text="카페"
+                    android:textSize="11dp"
+                    android:layout_gravity="center"/>
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/soju"
+                    android:onClick="onDrinkClicked" />
+
+                <TextView
+                    android:text="술집"
+                    android:textSize="11dp"
+                    android:layout_gravity="center"/>
+
+            </GridLayout>
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/game"
+                    android:onClick="onGameClicked" />
+
+                <TextView
+                    android:text="놀거리"
+                    android:textSize="11dp"
+                    android:layout_gravity="center"/>
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/house"
+                    android:onClick="onHouseClicked" />
+
+                <TextView
+                    android:text="자취방"
+                    android:textSize="11dp"
+                    android:layout_gravity="center"/>
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/wait"
+                    android:onClick="onPreparingClicked" />
+
+                <TextView
+                    android:text="준비중"
+                    android:textSize="11dp"
+                    android:layout_gravity="center"/>
+
+            </GridLayout>
+        </GridLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/colorWhite"
+        app:itemIconTint="@color/bottom_menu_color"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/menu_bottom" />
+</FrameLayout>
