@@ -138,32 +138,8 @@ public class MainActivity_Login extends FragmentActivity {
         Toast.makeText(getApplicationContext(), String.format("로그아웃되었습니다"), Toast.LENGTH_SHORT).show();
     }
 
-    public void onDinnerClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Dinner.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onCafeClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Cafe.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onDrinkClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Drink.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onGameClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Game.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onHouseClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), House.class);
+    public void onItemClicked (View v) {
+        Intent intent = new Intent(getApplicationContext(), View_Item.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
     }

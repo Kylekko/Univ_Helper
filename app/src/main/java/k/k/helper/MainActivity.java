@@ -143,35 +143,12 @@ public class MainActivity extends FragmentActivity {
         overridePendingTransition(0, 0);
     }
 
-    public void onDinnerClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Dinner.class);
+    public void onItemClicked (View v) {
+        Intent intent = new Intent(getApplicationContext(), View_Item.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
     }
 
-    public void onCafeClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Cafe.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onDrinkClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Drink.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onGameClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), Game.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
-
-    public void onHouseClicked (View v) {
-        Intent intent = new Intent(getApplicationContext(), House.class);
-        startActivity(intent);
-        overridePendingTransition(0, 0);
-    }
 
     public void onPreparingClicked (View v) {
         Toast.makeText(getApplicationContext(), String.format("준비중입니다."), Toast.LENGTH_SHORT).show();

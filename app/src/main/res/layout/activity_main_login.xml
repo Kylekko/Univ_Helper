@@ -88,7 +88,7 @@
                     android:background="#fff"
                     android:scaleType="fitXY"
                     android:src="@drawable/dinner"
-                    android:onClick="onDinnerClicked" />
+                    android:onClick="onItemClicked"  />
 
                 <TextView
                     android:text="식당"
@@ -111,7 +111,7 @@
                     android:background="#fff"
                     android:scaleType="fitXY"
                     android:src="@drawable/coffee"
-                    android:onClick="onCafeClicked" />
+                    android:onClick="onItemClicked"  />
 
                 <TextView
                     android:text="카페"
@@ -134,7 +134,7 @@
                     android:background="#fff"
                     android:scaleType="fitXY"
                     android:src="@drawable/soju"
-                    android:onClick="onDrinkClicked" />
+                    android:onClick="onItemClicked"  />
 
                 <TextView
                     android:text="술집"
@@ -162,7 +162,7 @@
                     android:background="#fff"
                     android:scaleType="fitXY"
                     android:src="@drawable/game"
-                    android:onClick="onGameClicked" />
+                    android:onClick="onItemClicked" />
 
                 <TextView
                     android:text="놀거리"
@@ -184,7 +184,7 @@
                     android:background="#fff"
                     android:scaleType="fitXY"
                     android:src="@drawable/house"
-                    android:onClick="onHouseClicked" />
+                    android:onClick="onItemClicked" />
 
                 <TextView
                     android:text="자취방"

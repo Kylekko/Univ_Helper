@@ -17,10 +17,15 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".SelectItemView"></activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAZKSIwBlHzCi6iLut5lmVChxdjdsfOPQM" />
+            android:value="APIKey" />
 
         <activity
             android:name=".Splash"
@@ -31,14 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".NavigationFullMap" />
         <activity android:name=".NavigationFullMap_Login" />
-        <activity android:name=".House" />
-        <activity android:name=".Game" />
-        <activity android:name=".Drink" />
-        <activity android:name=".Cafe" />
-        <activity android:name=".Dinner" />
+        <activity android:name=".View_Item" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />

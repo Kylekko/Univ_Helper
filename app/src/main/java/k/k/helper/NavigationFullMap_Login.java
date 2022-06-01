@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.clustering.ClusterManager;
 
 public class NavigationFullMap_Login extends AppCompatActivity {
@@ -35,7 +36,7 @@ public class NavigationFullMap_Login extends AppCompatActivity {
             @Override
             public void onMapReady(@NonNull GoogleMap googleMap) {
                 NavigationFullMap_Login.this.googleMap=googleMap;
-                LatLng latLng = new LatLng(36.84082025252936,127.18046587264169);
+                final LatLng latLng = new LatLng(36.8420109940228, 127.18203492778801);
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 googleMap.moveCamera(CameraUpdateFactory.zoomTo(16));
 
@@ -46,7 +47,8 @@ public class NavigationFullMap_Login extends AppCompatActivity {
                 myItemClusterManager.setOnClusterItemClickListener(new ClusterManager.OnClusterItemClickListener<MyItem>() {
                     @Override
                     public boolean onClusterItemClick(MyItem item) {
-                        Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
+                        double distance = (int)SphericalUtil.computeDistanceBetween(latLng,item.getPosition());
+                        Toast.makeText(NavigationFullMap_Login.this,"백석대에서"+item.getTitle()+"까지의 거리는 "+distance+"m", Toast.LENGTH_SHORT).show();
                         return false;
                     }
                 });
