@@ -17,7 +17,6 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".SelectItemView"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -25,7 +24,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="APIKey" />
+            android:value="AIzaSyAZKSIwBlHzCi6iLut5lmVChxdjdsfOPQM" />
 
         <activity
             android:name=".Splash"

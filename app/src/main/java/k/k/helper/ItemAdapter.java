@@ -15,7 +15,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CustomViewHold
     private ArrayList<PersonalData> mList = null;
     private Activity context = null;
 
-
     public ItemAdapter(Activity context, ArrayList<PersonalData> list) {
         this.context = context;
         this.mList = list;
@@ -56,5 +55,4 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CustomViewHold
     public int getItemCount() {
         return (null != mList ? mList.size() : 0);
     }
-
 }

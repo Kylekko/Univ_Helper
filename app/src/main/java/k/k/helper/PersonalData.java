@@ -1,9 +1,11 @@
 package k.k.helper;
 
 public class PersonalData {
-    private String name;
-    private String itemClass;
-    private String address;
+    public String name;
+    public String itemClass;
+    public String address;
+    public Double lat;
+    public Double longitude;
 
     public String getName() {
         return name;
@@ -17,6 +19,7 @@ public class PersonalData {
         return address;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
@@ -27,5 +30,13 @@ public class PersonalData {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 }

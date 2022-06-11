@@ -24,10 +24,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.maps.android.SphericalUtil;
 import com.google.maps.android.clustering.ClusterManager;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,10 +41,11 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class View_Item extends AppCompatActivity {
     private static String IP_ADDRESS = "http://helper.dothome.co.kr";
-    private static String TAG = "php로그";
+    private static String TAG = "PHP Log:";
 
     private ArrayList<PersonalData> mArrayList;
     private ItemAdapter mAdapter;
@@ -94,7 +97,7 @@ public class View_Item extends AppCompatActivity {
                         return false;
                     }
                 });
-                addItems();
+                addItem();
             }
         });
 
@@ -157,7 +160,6 @@ public class View_Item extends AppCompatActivity {
                 mArrayList.clear();
                 mAdapter.notifyDataSetChanged();
 
-
                 String Keyword = mEditTextSearchKeyword.getText().toString();
                 mEditTextSearchKeyword.setText("");
 
@@ -179,7 +181,7 @@ public class View_Item extends AppCompatActivity {
         });
     }
 
-    private class GetData extends AsyncTask<String, String, String> {
+    private class GetData extends AsyncTask<String, String , String> {
 
         ProgressDialog progressDialog;
         String errorString = null;
@@ -204,11 +206,9 @@ public class View_Item extends AppCompatActivity {
             Log.d(TAG, "response - " + result);
 
             if (result == null){
-
                 mTextViewResult.setText(errorString);
             }
             else {
-
                 mJsonString = result;
                 showResult();
             }
@@ -273,23 +273,26 @@ public class View_Item extends AppCompatActivity {
 
                 return null;
             }
-
         }
     }
 
-    private void showResult(){
+    String name_list[] = new String[20];
+    Double lat_list[] = new Double[20];
+    Double longitude_list[] = new Double[20];
 
+    public void showResult(){
         String TAG_JSON="helper";
         String TAG_NAME = "name";
         String TAG_CLASS = "class";
         String TAG_ADDR ="addr";
-
+        String TAG_LAT = "lat";
+        String TAG_LONGITUDE ="longitude";
 
         try {
             JSONObject jsonObject = new JSONObject(mJsonString);
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
 
-            for(int i=0;i<jsonArray.length();i++){
+            for(int i=0;i<=jsonArray.length();i++){
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
@@ -297,37 +300,39 @@ public class View_Item extends AppCompatActivity {
                 String itemClass = item.getString(TAG_CLASS);
                 String addr = item.getString(TAG_ADDR);
 
+                Double lat = item.getDouble(TAG_LAT);
+                Double longitude = item.getDouble(TAG_LONGITUDE);
+
+                name_list[i] = name;
+                lat_list[i] = lat;
+                longitude_list[i] = longitude;
+
                 PersonalData personalData = new PersonalData();
 
                 personalData.setName(name);
-                personalData.setItemClass(itemClass);
-                personalData.setAddress(addr);
+                personalData.setItemClass("카테고리: " + itemClass);
+                personalData.setAddress("주소: " + addr);
 
-                Log.d(TAG, name + itemClass + addr);
+                //Log.d(TAG, name + itemClass + addr + lat + longitude);
+
+                Log.d(TAG, name_list[i] + " | " + lat_list[i] + " | " + longitude_list[i]);
+                Log.d(TAG, name_list[i].getClass().getName() + " | " + lat_list[i].getClass().getName() + " | " + longitude_list[i].getClass().getName());
 
                 mArrayList.add(personalData);
                 mAdapter.notifyDataSetChanged();
             }
-
-
-
         } catch (JSONException e) {
-
             Log.d(TAG, "showResult : ", e);
         }
-
     }
+    public void addItem() {
+        for (int j = 0; j < name_list.length; j++) {
 
-    private void addItems() {
-        double lat[] = new double[]{36.84082025252936,36.84057872227313,36.84054502042929,36.84135309408008,36.840929708490435,36.841102982740644,36.84082023551096,36.84156160334769,36.841060982327235,36.84187722467452,36.84094761097701,36.84184569039077,36.84081057700755,36.84043271052631,36.842429438117236,36.841135229524866};
-        double lng[] = new double[]{127.18046587264169  ,127.18078482158457 ,127.18072588398928  ,127.1811650228917,127.18107713776622 ,127.18120086926538,127.18047708374063 ,127.18181856986371,127.18067384499851   ,127.18166516177315  ,127.1811556580755   ,127.18166228436095,127.18090308426909   ,127.18050980638733  ,127.18294736740182   ,127.18073568117393  };
-        String name[] = new String[]{"육회한날","한라맥주","장미맨숀","딥인싸이드","알촌","에셀나무","청년다방","썬오브비앤피","게임스토리pc방","와우pc방","메이크엠박스노래방","스타싱어코인노래연습장","공차","이디야커피","피카플레이스","블랙컨테이너"};
-        for(int i=0 ; i<16; i++) {
-            MyItem offsetItem = new MyItem(lat[i], lng[i],name[i]);
-            //MarkerOptions markerOptions = new MarkerOptions().position(offsetItem.getPosition()).title(offsetItem.getTitle());
-            //googleMap.addMarker(markerOptions);
+            if (name_list[j] == null)
+                continue;
+
+            MyItem offsetItem = new MyItem(lat_list[j], longitude_list[j], name_list[j]);
             myItemClusterManager.addItem(offsetItem);
-
         }
     }
 }

@@ -24,7 +24,6 @@ public class MainActivity extends FragmentActivity {
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 5;
     private CircleIndicator3 mIndicator;
-    WebView myWebView;
 
     Fragment fragment1;
     Fragment fragment2;
